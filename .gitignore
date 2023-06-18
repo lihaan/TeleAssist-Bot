@@ -1,0 +1,10 @@
+# ignore python virtual environment and cache
+bot_env/
+*__pycache__/
+
+# ignore sensitive keys / personal information
+*.env
+message_templates.py
+
+# ignore vscode workspace configuration
+.vscode

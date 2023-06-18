@@ -1,0 +1,48 @@
+# Create your own message_templates.py with the following variables, or use this as a template to get started quickly!
+
+START_DESC = "Default command provided by Telegram to start conversation with bot. Does not show in /help"
+HELP_DESC = "view list of commands"
+ABOUT_DESC = "learn more about the TeleAssist bot"
+POKE_DESC = "check whether [YOUR_NAME_HERE] is free now"
+BUSY_DESC = "starts an assist session. Input in the following format: <command> <duration>, <reason>"
+FREE_DESC = "ends an assist session. Informs peers spoken to that you are now free!"
+CHANGELOG_DESC = "view changelog and planned future release schedule"
+
+ABOUT_BOT = """
+This is a personalised chatbot meant to inject some chaos into [YOUR_NAME_HERE]'s boring life and entertain those lucky to be added to [YOUR_NAME_HERE]'s contacts list.
+The statements made by this bot does in no way represent [YOUR_NAME_HERE]'s current views or opinions.
+"""
+
+CHANGELOG = """
+v0.0.1 (28/05/23)
+- First release!
+
+v0.0.2 (07/06/23)
+- Bugfix: referenced a variable that is not defined
+
+v0.1.0 (18/06/23)
+- Open-source release - project is now on github!
+- UX: Bot only informs user of presence after a response is ready, and not immediately upon receipt of user's message
+    - Helps to pace out the messages received, improving response specificity
+- Stability: Refactored code and improved stability of backend when under load
+"""
+
+POKE = {
+    "free": "[YOUR_NAME_HERE] is free and available to chat!",
+    "busy": "Sorry! [YOUR_NAME_HERE] is currently busy {reason} for {duration_num} {duration_units} until {end_time}",
+    "still_busy": "[YOUR_NAME_HERE] was supposed to be done {reason} {duration_num} {duration_units} ago at {end_time} but it's taking longer than expected!"
+}
+
+BUSY = {
+    "missing_comma": "Duration number not formatted properly",
+    "missing_units": "Duration units not formatted properly",
+    "success": "Session started!",
+    "existing": "There is already an existing session!",
+    "notif_problem": "Session was started but there has been a problem disabling notifications...",
+}
+
+FREE = {
+    "success": "Session ended!",
+    "no_session": "You got to create a session first!",
+    "notif_problem": "Session was ended but there has been a problem restoring notifications...",
+}
