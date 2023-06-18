@@ -16,14 +16,14 @@ Frontend interface for the TeleAssist project!
 
 ## Requirements
 
-Note that the functionality of this *TeleAssist - Telegram Bot* is meant to be paired with the *TeleAssist - Web Server*(https://github.com/lihaan/TeleAssist-Web). It acts as the back-end containing all the core functionalities.
+Note that the functionality of this *TeleAssist - Telegram Bot* is meant to be paired with the [*TeleAssist - Web Server*](https://github.com/lihaan/TeleAssist-Web). It acts as the back-end containing all the core functionalities.
 
 - Python 3
   - Recommended: >= 3.10.4
 - Host Machine
   - RAM: >= 75MB to ensure optimal performance
   - Internet connectivity
-    - to ping Telegram for any new messages (these are termed by Telegram as "updates")
+    - To ping Telegram for any new messages (these are termed by Telegram as "updates")
 - Docker (optional)
   - Dockerfile provided if you wish to containerize it
 
@@ -35,7 +35,7 @@ Note that the functionality of this *TeleAssist - Telegram Bot* is meant to be p
     - Obtain your bot token
 
 2. Clone repository
-    > git clone https://github.com/lihaan/TeleAssist-Bot.git
+    > \> git clone https://github.com/lihaan/TeleAssist-Bot.git
 
 3. Create message_templates.py in */src* directory
     - This python file will contain the messages that the app sends
@@ -47,25 +47,25 @@ Note that the functionality of this *TeleAssist - Telegram Bot* is meant to be p
 
 5. Install dependencies
     - Recommended to create a virtual environment (eg. venv) before installing
-        > pip install -r requirements.txt
+        > \> pip install -r requirements.txt
 
 
 ## Run
 1. Run locally
-   > python src/main.py
+   > \> python src/main.py
 
 
 ## Build and Deploy (with Docker)
 
 - Dockerfile is provided for reference at */src/Dockerfile*
-- Take note to amend the URL of the web server in */src/rest.py* from localhost to \[name\_assigned\_to\_web\_server\_container\]. For example, in the command above, the name assigned to the bot docker container is *bot*.
+- Take note to amend the URL of the web server in */src/rest.py* from localhost to \[name\_assigned\_to\_web\_server\_container\]. By default, you should change the URL to *http://web:5000*
 - If you are using *TeleAssist - Web Server*, you should consider placing all docker containers in the same network
 - Final list of commands to build and run:
-  > docker network create tele-assist-network
+  > \> docker network create tele-assist-network
 
-  > docker build -t tele-assist-bot .
+  > \> docker build -t tele-assist-bot .
 
-  > docker run --name bot --net tele-assist-network -d tele-assist-bot
+  > \> docker run --name bot --net tele-assist-network -d tele-assist-bot
 
 
 ## Contributing
